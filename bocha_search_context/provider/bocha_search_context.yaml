@@ -9,8 +9,22 @@ identity:
     en_US: "Bocha search as agent-context"
     zh_Hans: "Bocha search as agent-context"
     pt_BR: "Bocha search as agent-context"
-  icon: "icon.svg"
+  icon: "icon.jpg"
 
+credentials_for_provider:
+  BOCHA_API_KEY:
+    type: secret-input
+    required: true
+    label:
+      en_US: BOCHA_API_KEY
+      zh_Hans: BOCHA_API_KEY
+    placeholder:
+      en_US: Please input your BOCHA_API_KEY
+      zh_Hans: 请输入你的 BOCHA_API_KEY
+    help:
+      en_US: Get your BOCHA_API_KEY
+      zh_Hans: 获取您的 BOCHA_API_KEY
+    url: https://bocha-ai.feishu.cn/wiki/PriLwr2jyizFuhkSAjGcozSqnrd
 #########################################################################################
 # If you want to support OAuth, you can uncomment the following code.
 #########################################################################################
@@ -54,7 +68,7 @@ identity:
 #         en_US: "Access Token"
 
 tools:
-  - tools/bocha_search_context.yaml
+  - tools/bocha_web_search_context.yaml
 extra:
   python:
     source: provider/bocha_search_context.py

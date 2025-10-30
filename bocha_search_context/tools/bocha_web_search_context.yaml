@@ -1,0 +1,86 @@
+identity:
+  name: "bocha_search_context"
+  author: "qin2dim"
+  label:
+    en_US: "bocha_search_context"
+    zh_Hans: "bocha_search_context"
+    pt_BR: "bocha_search_context"
+description:
+  human:
+    en_US: "Bocha excels at searching the entire web for information and web links, offering advantages when retrieving financial news updates from within China. It can provide webpage titles, web links, site names, article summaries, and publication times."
+    zh_Hans: "从博查搜索全网信息和网页链接，在获取中国国内金融快讯时有优势。可以获取到网页标题、网页链接、网站名称、文章摘要、发布时间等。"
+  llm: "从博查搜索全网信息和网页链接，在获取中国国内金融快讯时有优势。可以获取到网页标题、网页链接、网站名称、文章摘要、发布时间等。"
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: query
+      zh_Hans: query
+      pt_BR: query
+    human_description:
+      en_US: "Search keywords or phrases"
+      zh_Hans: "搜索关键词或语句"
+    llm_description: "搜索关键词或语句"
+    form: llm
+  - name: freshness
+    type: select
+    required: false
+    default: noLimit
+    form: llm
+    label:
+      en_US: "freshness"
+      zh_Hans: "freshness"
+    human_description:
+      en_US: "Time range"
+      zh_Hans: "搜索的时间范围"
+    llm_description: "（Optional）默认为 noLimit。搜索的时间范围，可选值为 noLimit, oneYear, oneMonth, oneWeek, oneDay。"
+    options:
+      - value: noLimit
+        label:
+          en_US: "noLimit"
+          zh_Hans: "noLimit"
+      - value: oneYear
+        label:
+          en_US: "oneYear"
+          zh_Hans: "oneYear"
+      - value: oneMonth
+        label:
+          en_US: "oneMonth"
+          zh_Hans: "oneMonth"
+      - value: oneWeek
+        label:
+          en_US: "oneWeek"
+          zh_Hans: "oneWeek"
+      - value: oneDay
+        label:
+          en_US: "oneDay"
+          zh_Hans: "oneDay"
+  - name: count
+    required: false
+    default: 10
+    type: number
+    label:
+      en_US: "count"
+      zh_Hans: "count"
+    human_description:
+      en_US: "Number of results to return"
+      zh_Hans: "返回结果数量"
+    llm_description: "（Optional）每次搜索返回搜索结果的数量，最多50条，默认10条。（返回的结果数量有可能小于指定的count值）"
+    form: llm
+  - name: as_agent_tool
+    type: boolean
+    required: false
+    default: false
+    form: form
+    label:
+      en_US: Used in Agent nodes
+      zh_Hans: 在 Agent 节点中使用
+    human_description:
+      en_US: Default is False. The node behaves differently in workflow/chatflow calls versus when used as a tool within an Agent, resulting in different return formats. In Agent mode, the context template is optimized to clearly highlight key information. Make sure to enable this parameter when using the Agent mode.
+      zh_Hans: 默认为 False，直接在 workflow 或 chatflow 中调用还是在 Agent 中作为工具使用，两种模式触发不同的返回格式。在 Agent 模式下，优化上下文模板，明确关键信息。 在 Agent 模式下请务必启动这个参数。
+      pt_BR: Default is False. The node behaves differently in workflow/chatflow calls versus when used as a tool within an Agent, resulting in different return formats. In Agent mode, the context template is optimized to clearly highlight key information. Make sure to enable this parameter when using the Agent mode.
+    llm_description: Default is False. The node behaves differently in workflow/chatflow calls versus when used as a tool within an Agent, resulting in different return formats. In Agent mode, the context template is optimized to clearly highlight key information. Make sure to enable this parameter when using the Agent mode.
+extra:
+  python:
+    source: tools/bocha_web_search_context.py

@@ -1,5 +1,6 @@
 from typing import Any
 
+import httpx
 from dify_plugin import ToolProvider
 from dify_plugin.errors.tool import ToolProviderCredentialValidationError
 
@@ -11,6 +12,15 @@ class BochaSearchContextProvider(ToolProvider):
             """
             IMPLEMENT YOUR VALIDATION HERE
             """
+            url = "https://api.bochaai.com/v1/fund/remaining"
+            api_key = credentials.get("BOCHA_API_KEY")
+            headers = {"Authorization": f"Bearer {api_key}"}
+            response = httpx.get(url, headers=headers)
+            data: dict = response.json()
+            if not isinstance(data, dict) or data.get("code") not in ["200"]:
+                raise ToolProviderCredentialValidationError(
+                    f"Invalid BOCHA_API_KEY. Please check your credentials. {data=}"
+                )
         except Exception as e:
             raise ToolProviderCredentialValidationError(str(e))
 
