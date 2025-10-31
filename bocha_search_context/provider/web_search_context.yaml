@@ -68,7 +68,7 @@ credentials_for_provider:
 #         en_US: "Access Token"
 
 tools:
-  - tools/bocha_web_search_context.yaml
+  - tools/web_search_context.yaml
 extra:
   python:
-    source: provider/bocha_search_context.py
+    source: provider/web_search_context.py

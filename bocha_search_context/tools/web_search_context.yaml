@@ -1,15 +1,15 @@
 identity:
-  name: "bocha_search_context"
+  name: "web_search_context"
   author: "qin2dim"
   label:
-    en_US: "bocha_search_context"
-    zh_Hans: "bocha_search_context"
-    pt_BR: "bocha_search_context"
+    en_US: "web_search_context"
+    zh_Hans: "web_search_context"
+    pt_BR: "web_search_context"
 description:
   human:
-    en_US: "Bocha excels at searching the entire web for information and web links, offering advantages when retrieving financial news updates from within China. It can provide webpage titles, web links, site names, article summaries, and publication times."
-    zh_Hans: "从博查搜索全网信息和网页链接，在获取中国国内金融快讯时有优势。可以获取到网页标题、网页链接、网站名称、文章摘要、发布时间等。"
-  llm: "从博查搜索全网信息和网页链接，在获取中国国内金融快讯时有优势。可以获取到网页标题、网页链接、网站名称、文章摘要、发布时间等。"
+    en_US: "webpage excels at searching the entire web for information and web links, offering advantages when retrieving financial news updates from within China. It can provide webpage titles, web links, site names, article summaries, and publication times."
+    zh_Hans: "从网络搜索全网信息和网页链接，该工具在获取中国国内金融快讯时有优势。可以获取到网页标题、网页链接、网站名称、文章摘要、发布时间等。"
+  llm: "从网络搜索全网信息和网页链接，该工具在获取中国国内金融快讯时有优势。可以获取到网页标题、网页链接、网站名称、文章摘要、发布时间等。"
 parameters:
   - name: query
     type: string
@@ -83,4 +83,4 @@ parameters:
     llm_description: Default is False. The node behaves differently in workflow/chatflow calls versus when used as a tool within an Agent, resulting in different return formats. In Agent mode, the context template is optimized to clearly highlight key information. Make sure to enable this parameter when using the Agent mode.
 extra:
   python:
-    source: tools/bocha_web_search_context.py
+    source: tools/web_search_context.py

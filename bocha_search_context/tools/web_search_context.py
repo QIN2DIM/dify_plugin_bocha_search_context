@@ -8,7 +8,7 @@ from dify_plugin.entities.tool import ToolInvokeMessage
 from tools._search_client import EXCLUDE_SITES, to_ref, InstantSearchResponse
 
 
-class BochaSearchContextTool(Tool):
+class WebSearchAsAgentContextTool(Tool):
     BOCHA_API_URL = "https://api.bochaai.com/v1"
 
     @staticmethod

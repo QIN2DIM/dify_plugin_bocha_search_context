@@ -29,7 +29,7 @@ TOOL_INVOKE_SEGMENT_TPL = """
   <date>{date}</date>
   <source>{source}</source>
   <snippet>
-    {snippet}
+  {snippet}
   </snippet>
 </search_result>
 """
