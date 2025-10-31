@@ -1,14 +1,14 @@
 identity:
   author: "qin2dim"
-  name: "bocha_search_context"
+  name: "web_search_context"
   label:
-    en_US: "bocha_search_context"
-    zh_Hans: "bocha_search_context"
-    pt_BR: "bocha_search_context"
+    en_US: "web_search_context"
+    zh_Hans: "web_search_context"
+    pt_BR: "web_search_context"
   description:
-    en_US: "Bocha search as agent-context"
-    zh_Hans: "Bocha search as agent-context"
-    pt_BR: "Bocha search as agent-context"
+    en_US: "Web search as agent-context"
+    zh_Hans: "Web search as agent-context"
+    pt_BR: "Web search as agent-context"
   icon: "icon.jpg"
 
 credentials_for_provider:
